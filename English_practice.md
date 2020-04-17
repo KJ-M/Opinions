@@ -21,7 +21,7 @@ Some attention has been paid to make this software easily configurable and exten
 [^12]:utility（效用）
 [^13]:dynamically（动态地）
 
-## NO.2 Friday,April 3,2020*
+## *NO.2 Friday,April 3,2020*
 
 U-Boot Makefile 414-420
 - To make sure we do not include .config for any of the config targets catch them early, and hand them over to[^14] scripts/kconfig/Makefile
