@@ -96,3 +96,11 @@ Track[^43]
 [^41]:merge（合并）
 [^42]:fatal（致命的）
 [^43]:track (追踪)
+
+##  *NO.5 Sunday,April19,2020*
+Linux Module Utilities[^44]
+You will probably need to make your busybox binary setuid[^45] root to ensure all configured applets[^46] will work properly
+
+[^44]:Linux模块实用程序
+[^45]:???
+[^46]:小程序
