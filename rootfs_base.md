@@ -81,3 +81,50 @@ linux内核中目录Documentation/filesystems/nfs/nfsroot.txt文件讲解如何�
 
 设置完之后即可启动linux，使用ls即可查看挂载的根文件系统，但会出现`can't run '/etc/init.d/rcS': No such file or directory`这样的错误，所以根文件系统还需要完善
 
+## 完善根文件系统
+
+1. 创建/etc/init.d/rcS文件并赋予可执行权限，规定内核启动之后启动哪些文件，如挂载文件系统，管理热插拔设备，导出环境变量...
+2. 创建/etc/fstab文件，定义系统启动该挂载哪些文件
+3. 创建/etc/inittab文件，关机、重启、按下ctrl+alt+del、关机等特殊情况下执行特殊process
+
+## 测试根文件系统
+
+### 软件运行测试
+
+1. 测试文件的编写：
+
+   在rootfs/drivers下创建一个hello.c测试文件，编写测试程序完成后用`arm-linux-gnueabihf-gcc hello.c -o hello`编译为可执行文件hello，查看hello文件类型和编码格式命令如下：
+
+   ```shell
+   ~/linux/nfs/rootfs/drivers$ file hello
+   hello: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpret...
+   ```
+
+   可以看出hello为32位，ARM架构，动态链接的文件
+
+2. 将测试文件在开发板终端运行
+
+   - 在开发板中输入`./hello` 运行，使用ctrl+c终止
+   - 输入`./hello &`后台运行，后台运行关闭方法：输入
+
+   `ps`查看后天运行进程PID，使用`kill -9 PID`关闭
+
+### 中文字符测试
+
+在rootfs创建一个“中文测试”文件夹，进入，使用touch创建“中文测试.txt”，使用vi编辑内容：“这是一个中文测试文件！”在开发板中打开，看文件夹和文件中文是否显示正常，使用cat命令查看文件
+
+### 开机自启动测试
+
+在etc/init.d/rcS文件最下面输入要开机运行的命令，开机即可自动运行，可以输入
+
+```shell
+cd drivers
+./hello &
+cd /
+```
+
+即可开机运行hello测试程序，并回到主目录
+
+### 外网连接测试
+
+略。。。
