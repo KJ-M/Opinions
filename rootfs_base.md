@@ -1,5 +1,19 @@
 # 根文件系统
 
+## linux 根目录各文件夹介绍
+
+- /bin：可执行文件，如ls，mv等命令
+- /dev：即device，设备文件（驱动）
+- /etc：各种配置文件
+- /mnt：临时挂载目录，一般为空，可将SD卡或U盘挂载到/mnt/sd,/mnt/usb中
+- /proc：proc文件系统挂载点，虚拟文件系统，储存运行信息文件
+- /usr：Unix Software Resource，Unix操作系统软件资源目录
+- /var：放一些可以改变的数据
+- /sbin：放只有管理员才能使用的命令，用于系统管理
+- /sys：系统启动后sysfs文件系统挂载点，提供内核数据结构信息
+- /opt：可选文件、软件存放区，用户选择存那些文件或软件
+- 
+
 ## 使用BUSYBOX创建
 
 1. 官网`https://busybox.net`下载1.29.0版本`busybox-1.29.0.tar.bz2`
