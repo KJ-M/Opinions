@@ -104,3 +104,14 @@ You will probably need to make your busybox binary setuid[^45] root to ensure al
 [^44]:Linux模块实用程序
 [^45]:???
 [^46]:小程序
+
+## *NO.6 Friday,May8,2020*
+
+the first device number for which this device is responsible[^47]
+
+the number of consecutive[^48] minor numbers corresponding[^49] to this device[^50]
+
+[^47]:该设备负责的第一个设备号
+[^48]:连续的，随后的
+[^49]:相应，对应
+[^50]:与此设备对应的连续的次设备号的数量
