@@ -44,7 +44,7 @@ vimrc文件可以配置vim的设置
 
 ## ctags使用：
 
-使用ctags -R*生成tags文件
+使用ctags -R *生成tags文件
 
 在vim中输入ts main就能找到main函数所在位置，其他函数类似
 
@@ -83,7 +83,7 @@ ctrl+]跳转到定义ctrl+t跳转回去
 
 ## 安装插件vim-plug:
 
-将git中的plug.vim文件放在目录`/home/mkj/.local/share/nvim/site/autoload`中，在配置文件中输入
+将git中的plug.vim文件放在目录`/home/mkj/.local/share/nvim/site/autoload`中（neovim），`/home/mkj/.vim/autoload`中（vim）在配置文件中输入
 
 ```shell
 call plug#begin('~/.vim/plugged')
