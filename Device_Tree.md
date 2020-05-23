@@ -2,6 +2,28 @@ DTS,DTB,DTC关系：
 
 DTS为设备数源码文件，DTB为将DTS编译成的二进制文件，DTC为编译过程用到的工具
 
+# imx6ull节点包含关系：
+
+/ 根节点
+
+- aliases节点（定义节点别名，类似于&lable）
+- chosen节点（不是真实设备，为了uboot向linux传递数据）
+
+- cpus节点
+  - cpu0
+  - cpu1...
+- soc节点（SOC内部外设）
+  - aips1节点（imx6ull内部分为三个域，分管不同外设控制器）
+  - aips2节点
+  - aips3节点
+
+## 设备树要点：
+
+- 节点定义
+- 属性作用
+- 绑定信息文档
+- 常用of函数
+
 ## 设备树常用of函数：
 
 ### 查找节点的of函数：
@@ -65,3 +87,4 @@ of_translate_address()	将从设备树读取到的地址转换为物理地址
 of_address_to_resource()	将reg属性值转换为resource结构体类型的资源值
 
 of_iomap()	直接将reg属性中的内存地址映射为虚拟地址
+
