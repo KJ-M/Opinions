@@ -4,6 +4,38 @@ pinctrl子系统用来配置引脚属性
 
 gpio子系统用来将配置好的引脚和设备联系起来，并提供引脚操作函数如读、写等等
 
+## 遇到问题：
+
+### 1、释放IO
+
+**一定记得在卸载驱动时释放IO！！！！！**
+
+### 2、
+
+```c
+static ssize_t beep_write (struct file *file, const char __user *buf, size_t count, loff_t *offset)
+{
+    int ret = 0;
+    unsigned char databuf[1];
+    unsigned char beepstat;
+    struct beep_dev *dev = file->private_data;
+    ret = copy_from_user(databuf, buf, count);
+    if(ret < 0) {
+        printk("kernel write failed!\r\n");
+        return -EFAULT;
+    }
+    beepstat = databuf[0];//非常重要,不使用beepstat直接读databuf会出错
+    if(beepstat == 1) {
+        gpio_set_value(dev->beep_gpio, 0);
+    }else if(beepstat == 0) {
+        gpio_set_value(dev->beep_gpio, 1);
+    }
+    return 0;
+}
+```
+
+在write函数中，必须要用beepstat变量，不知为什么
+
 ## 设备树的修改
 
 **在配置gpio前一定要检查以下引脚是否已经被使用！！！！！**
@@ -76,32 +108,6 @@ beep {
 ```
 
 在驱动出口函数最后添加释放gpio编号函数`gpio_free(beep.beep_gpio);`
-
-## 遇到问题：
-
-```c
-static ssize_t beep_write (struct file *file, const char __user *buf, size_t count, loff_t *offset)
-{
-    int ret = 0;
-    unsigned char databuf[1];
-    unsigned char beepstat;
-    struct beep_dev *dev = file->private_data;
-    ret = copy_from_user(databuf, buf, count);
-    if(ret < 0) {
-        printk("kernel write failed!\r\n");
-        return -EFAULT;
-    }
-    beepstat = databuf[0];//非常重要,不使用beepstat直接读databuf会出错
-    if(beepstat == 1) {
-        gpio_set_value(dev->beep_gpio, 0);
-    }else if(beepstat == 0) {
-        gpio_set_value(dev->beep_gpio, 1);
-    }
-    return 0;
-}
-```
-
-在write函数中，必须要用beepstat变量，不知为什么
 
 
 
