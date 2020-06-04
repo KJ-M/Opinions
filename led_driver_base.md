@@ -180,3 +180,9 @@ int main(int argc,char *argv[])
 
 - **return -1的使用**
 - **`databuf[0] = atoi(argv[2]);`中，`atoi()`是将字符串类型转为int类型，databuf为unsigned char类型，所以说int和unsigned char通用？？？**
+
+## read和write的返回值：
+
+当coyy_xx_user出错时，函数返回-EFUALT，内核一看是负数，就知道函数出错，此时应用层的read、write函数就会返回-1。
+
+如果执行正确，test_read返回成功读取的字节数，内核看到非负就会认为函数正确执行，应用层的函数同样返回相同的值。

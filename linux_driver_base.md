@@ -242,6 +242,12 @@ int main(int argc, char *argv[])
 
 - 测试APP使用了系统调用函数read,write,open,close,这些函数可使用man (1/2/3) read/write命令查看具体使用方法，使用了`atoi(argv[2])`函数将字符串类型转换为整形
 
+## read和write的返回值：
+
+当coyy_xx_user出错时，函数返回-EFUALT，内核一看是负数，就知道函数出错，此时应用层的read、write函数就会返回-1。
+
+如果执行正确，test_read返回成功读取的字节数，内核看到非负就会认为函数正确执行，应用层的函数同样返回相同的值。
+
 ## 最终测试
 
 1. 加载模块：
