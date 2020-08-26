@@ -18,7 +18,7 @@ Git config 配置或读取环境变量
 
  常用需要配置的选项：
 
-Git config --global user.name xxx	用户名
+Git config --global user.name xxx	用户名      
 
 Git config --global user.email xxx	用户邮件地址
 
@@ -43,8 +43,6 @@ Git config --list		查看默认配置
  Git commit
 
 Git commit	xxx 将已track待提交的文件提交，此命令会进vi编辑提交信息，
-
-git commit -a	提交所有已stage的文件，
 
 git commit -m”ooo” xxx其中-m”ooo”参数可以直接在””中输入提交信息，不用进入vi编辑器
 
@@ -85,6 +83,8 @@ Git reset --hard xxx 本地库移动HEAD指针，充值暂存区，重置工作�
  Git checkout hot_fix		切换到hot_fix分支
 
  Git merge hot_fix	将hot_fix分支中的修改同步到本分支中（现在已经切换到master）
+
+git branch -d [name] (删除一个已经合并了的分支，如果强制删除一个分支，则用-D)
 
  
 
@@ -173,3 +173,34 @@ git push origin test:master	//提交本地分支test到远程master分支（orig
 git push origin test:test		//提交本地分支test到远程test，如果没有则创建远程test
 
 git push origin :test				//：左边本地分支为空，表示删除远程test分支，但本地还保存
+
+## git pull
+
+git pull <远程主机名> <远程分支名>:<本地分支名>
+
+例：git pull origin next:master	//将远程库origin的next分支与本地的master分支合并
+
+git pull origin next	//在本地next分支下执行本语句会默认拉取远程next分支到本地next分支
+
+### git提交冲突后解决
+
+git push origin xxxbranch遇到问题，推荐git pull下来
+
+git pull origin xxxbranch 打开进行更改冲突的地方
+
+git add .	
+
+git commit -m "合并更新"
+
+git push origin xxxbranch	OK!
+
+### git 在所有分支中查询最近提交的关键字，找到对应的分支
+
+已知版本关键字 ：BOCON_V50_190520_QH不知在哪个分支何时提交
+
+git rev-list --all | xargs git grep "BOCON_V50_190520_QH" 找到def1d7761cee4bdcf8e3c668899b20002bd0a014	这次提交
+
+使用git branch -r --contains def1d7761cee4bdcf8e3c668899b20002bd0a014 找到提交对应的远程分支
+
+
+
