@@ -120,6 +120,13 @@ Git merge mygithub/master 将抓取到的mygithub/master合并到本地库master
 
 git pull mygithub master 此命令相当于前面的先fetch再merge，一步达成同步
 
+## windows下设置免输入用户名密码
+在.gitconfig中输入如下代码
+```shell
+[credential]
+        helper = store --file ~/.git-credentials
+```
+其中~/.git-credentials跟.gitconfig保存在同一目录，用于保存用户名密码，输入一次后以后即可自动输入
 ## git stash使用
 
 （1）**git stash** save "save message" : 执行存储时，添加备注，方便查找，只有git stash 也要可以的，但查找时不方便识别。
