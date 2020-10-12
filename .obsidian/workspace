@@ -1,0 +1,100 @@
+{
+  "main": {
+    "id": "6f8de4e4d5e4bde6",
+    "type": "split",
+    "children": [
+      {
+        "id": "6fa784043a8581e5",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "C_practice/C_base.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "99de2fafa7facfb5",
+    "type": "split",
+    "children": [
+      {
+        "id": "6cfd2ada1c26a99c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "935b8654e1842400",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4c32b8887fa16c15",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": ""
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 311,
+    "collapsed": true
+  },
+  "right": {
+    "id": "2d69be20ba3ecb1c",
+    "type": "split",
+    "children": [
+      {
+        "id": "fb35275617830f77",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d12472cc2afc28e6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "C_practice/C_base.md"
+              }
+            }
+          },
+          {
+            "id": "953fce75932f6e41",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "C_practice/C_base.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 627
+  },
+  "lastOpenFiles": [
+    "C_practice/C_base.md",
+    "linux_app/app_note.md",
+    "23.md",
+    "Untitled.md",
+    "git.md",
+    "irq.md",
+    "English_practice.md",
+    "C程序练习.md",
+    "picocom.md",
+    "C_problems.md"
+  ]
+}

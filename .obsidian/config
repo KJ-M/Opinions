@@ -1,0 +1,61 @@
+{
+  "theme": "obsidian",
+  "pluginEnabledStatus": {
+    "file-explorer": true,
+    "global-search": true,
+    "switcher": true,
+    "graph": true,
+    "backlink": true,
+    "command-palette": true,
+    "markdown-importer": true,
+    "word-count": true,
+    "page-preview": true,
+    "custom-css": true,
+    "outline": true
+  },
+  "showLineNumber": false,
+  "vimMode": false,
+  "alwaysUpdateLinks": true,
+  "hotkeys": {
+    "app:go-back": [
+      {
+        "modifiers": [
+          "Alt"
+        ],
+        "key": ","
+      }
+    ],
+    "app:go-forward": [
+      {
+        "modifiers": [
+          "Alt"
+        ],
+        "key": "."
+      }
+    ],
+    "markdown:toggle-preview": [
+      {
+        "modifiers": [
+          "Alt"
+        ],
+        "key": "3"
+      }
+    ],
+    "app:toggle-left-sidebar": [
+      {
+        "modifiers": [
+          "Alt"
+        ],
+        "key": "1"
+      }
+    ],
+    "app:toggle-right-sidebar": [
+      {
+        "modifiers": [
+          "Alt"
+        ],
+        "key": "2"
+      }
+    ]
+  }
+}
