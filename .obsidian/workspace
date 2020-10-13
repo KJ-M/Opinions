@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "6fa784043a8581e5",
+        "id": "155af874e06fcd65",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "C_practice/C_base.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": ""
+                "query": "ubuntu"
               }
             }
           }
@@ -87,14 +87,14 @@
   },
   "lastOpenFiles": [
     "C_practice/C_base.md",
-    "linux_app/app_note.md",
-    "23.md",
+    "Ubuntu_problems.md",
+    "images/4.png",
+    "images/3.png",
+    "images/1.png.md",
+    "Pasted image 20201013213108.png",
+    "images/Pasted image 20201013212444.png.md",
+    "Pasted image 20201013212444.png",
     "Untitled.md",
-    "git.md",
-    "irq.md",
-    "English_practice.md",
-    "C程序练习.md",
-    "picocom.md",
-    "C_problems.md"
+    "linux_app/app_note.md"
   ]
 }
