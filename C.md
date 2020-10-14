@@ -385,5 +385,5 @@ int main(void)
 //strcmp(p,h):-32
 ```
 
-### 结构体大小问题
+
 

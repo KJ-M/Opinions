@@ -4,15 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "155af874e06fcd65",
+        "id": "ca02c35e049271fe",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "C_practice/C_base.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -48,8 +45,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311,
-    "collapsed": true
+    "width": 311
   },
   "right": {
     "id": "2d69be20ba3ecb1c",
@@ -64,9 +60,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "C_practice/C_base.md"
-              }
+              "state": {}
             }
           },
           {
@@ -74,27 +68,25 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
-              "state": {
-                "file": "C_practice/C_base.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 627
+    "width": 500
   },
   "lastOpenFiles": [
     "C_practice/C_base.md",
+    "C_practice/C语言内存分配图.png",
+    "C.md",
+    "运动.md",
+    "Pasted image 20201013213108.png",
+    "Untitled.md",
     "Ubuntu_problems.md",
     "images/4.png",
     "images/3.png",
-    "images/1.png.md",
-    "Pasted image 20201013213108.png",
-    "images/Pasted image 20201013212444.png.md",
-    "Pasted image 20201013212444.png",
-    "Untitled.md",
-    "linux_app/app_note.md"
+    "images/1.png.md"
   ]
 }
