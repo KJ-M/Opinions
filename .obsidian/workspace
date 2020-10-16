@@ -8,8 +8,11 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "C_practice/C_base.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -45,7 +48,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311
+    "width": 311,
+    "collapsed": true
   },
   "right": {
     "id": "2d69be20ba3ecb1c",
@@ -60,7 +64,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "C_practice/C_base.md"
+              }
             }
           },
           {
@@ -68,14 +74,16 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
-              "state": {}
+              "state": {
+                "file": "C_practice/C_base.md"
+              }
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 500
+    "width": 591
   },
   "lastOpenFiles": [
     "C_practice/C_base.md",
