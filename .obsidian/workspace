@@ -11,7 +11,7 @@
           "type": "markdown",
           "state": {
             "file": "C_practice/C_base.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 591,
-    "collapsed": true
+    "width": 591
   },
   "lastOpenFiles": [
     "C_practice/C_base.md",

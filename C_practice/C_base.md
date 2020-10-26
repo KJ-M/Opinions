@@ -157,6 +157,7 @@ int (*p)[6] = b;	//p+1,跨过6个int，b+1(b[1][6])，跨过6个int，故可表�
 ### size x.out查看x.out各段所占空间的大小
 
 ### 程序分debug版和release版的原因
+#### 可执行文件大小由.text段和.data段决定
 #### printf()中的“”字符所在内存也保存在text段，使用printf越多，text段越大
 
 ### 函数内static和全局变量存放位置一样，区别在于
