@@ -158,3 +158,19 @@ int (*p)[6] = b;	//p+1,跨过6个int，b+1(b[1][6])，跨过6个int，故可表�
 
 ### 程序分debug版和release版的原因
 #### printf()中的“”字符所在内存也保存在text段，使用printf越多，text段越大
+
+### 函数内static和全局变量存放位置一样，区别在于
+函数内static是局部变量，若两个函数内都有static int a，则两个a标签后缀名不一样，所以从来不用考虑不同函数中声明两个相同的static变量
+
+### 使用nm -n查看函数中各个符号所在位置
+
+### 堆空间的分配和释放
+#### malloc()一旦申请成功，返回地址，
+```c
+char *p
+p = (char *)malloc(5*sizeof(int))
+if(p == NULL)	
+	error
+```
+#### 释放
+free()

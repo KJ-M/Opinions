@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "ca02c35e049271fe",
+        "id": "e48755409f66804f",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "C_practice/C_base.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -83,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 591
+    "width": 591,
+    "collapsed": true
   },
   "lastOpenFiles": [
     "C_practice/C_base.md",

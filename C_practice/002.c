@@ -1,16 +1,18 @@
 #include <stdio.h>
-typedef struct
+
+int b = 100;
+int fun()
 {
-    char a;
-    int b;
-} str;
-int b;
+	static int a = 100;
+	return a++;
+}
+
+
 int main()
 {
-    int a;
-    printf("a:%p \n", &a);
-    printf("main:%p \n", main);
-    printf("b:%p \n", &b);
-
-    return 0;
+	static int a = 40;
+	a = 0x10;
+	printf("the a is %p\n", &a);
+	printf("the is %p\n", main);
+	return 0;
 }
