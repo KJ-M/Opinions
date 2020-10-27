@@ -175,3 +175,54 @@ if(p == NULL)
 ```
 #### 释放
 free()
+
+## 函数名，数组名
+```c
+#include <stdio.h>		//数组名取地址+1测试
+int main(void)
+{
+	int a[40];
+	printf("a:%p\n", a);
+	printf("&a:%p\n", &a);
+	printf("a+1:%p\n", a+1);
+	printf("&a+1:%p\n", &a+1);
+	return 0;
+}
+$ ./001.exe
+a:000000000022FDB0
+&a:000000000022FDB0
+a+1:000000000022FDB4
+&a+1:000000000022FE50
+&a+1 - &a = 160 = 4 * 40 （数组名取地址后的指针加一相当于加整个数组的大小）
+
+#include <stdio.h>		//函数名取地址+1测试
+int test(int a, int b)
+{
+	return a+b;
+}
+int main(void)
+{
+	printf("test:%p\n", test);
+	printf("&test:%p\n", &test);
+	printf("test+1:%p\n", test+1);
+	printf("&test+1:%p\n", &test+1);
+	return 0;
+}
+$ ./001.exe
+test:0000000000401550
+&test:0000000000401550
+test+1:0000000000401551
+&test+1:0000000000401551	（函数名取地址后指针加一相当于函数名代表的地址+1，跟数组不同）
+
+```
+
+总结：
+所以数组名和数组名取地址虽然一样，但意义不一样
+数组名代表数组第一个元素地址
+数组名取地址代表指向整个数组的指针，相当于前面介绍的 int (*p)[10]
+函数名取地址代。。。先记住现象吧，研究意义不大，因为之前就不允许对函数名字取地址
+用到的是函数指针，见onenote
+### 函数名，数组名，变量名都是些标识符，在编译到最后都会使用地址代替，不存在储存这些名的问题
+
+## 函数指针相关
+https://blog.csdn.net/dagefeijiqumeiguo/article/details/73393369
