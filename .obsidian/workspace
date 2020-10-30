@@ -1,17 +1,17 @@
 {
   "main": {
-    "id": "6f8de4e4d5e4bde6",
+    "id": "5d6f9fbb0d104506",
     "type": "split",
     "children": [
       {
-        "id": "e48755409f66804f",
+        "id": "7f5a6574e0067700",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "C_practice/C_base.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -87,8 +87,8 @@
   },
   "lastOpenFiles": [
     "C_practice/C_base.md",
-    "C_practice/C语言内存分配图.png",
     "C.md",
+    "C_practice/C语言内存分配图.png",
     "运动.md",
     "Pasted image 20201013213108.png",
     "Untitled.md",
