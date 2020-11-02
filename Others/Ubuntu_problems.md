@@ -17,17 +17,17 @@ Ubuntu下： ubuntu….
 以上三者查看磁盘方式可以交替使用
 一个磁盘空间可以使用挂载命令挂载许多次，但取消挂载时也要原路返回许多次，类似于入栈出栈，sd卡刚插入的时候默认挂载到media文件夹下，使用umount命令卸载之后使用df或者mount命令就看不到sd卡挂载信息了，取消挂载信息后就可以进行格式化，分区等操作。
 
-![](images/1.png)
+![](1.png)
 使用fdisk对磁盘分区进行增删，分完区用mkfs进行格式化
 对于SD卡，命令sudo fdisk /dev/sdb可进入fdisk设置界面，通过指示输入不同命令可完成对SD卡的分区，显示详细信息，分区type设置，可设置分区大小，分区完成后使用mkfs进行格式化
 此处分区type和格式化的文件类型似乎关系不大，所以关注格式化时设置的文件类型，一般使用vfat格式化，即使用下图中的第一行
-![](images/2.png)
+![](2.png)
 格式化完成即可使用mount或者umount进行挂载卸载
 
 ## 解决sudo apt-get update命令执行问题:
 /etc/apt/sources.list文件里保存了apt-get update对应的源，该命令为参考sources.list中的源更新本地软件库，比如增加新的源，就需要update一下来同步，才能进行安装对应软件，不同步就找不到软件
-![](images/3.png)
-![](images/4.png)
+![](3.png)
+![](4.png)
 
 ## Ubuntu查看文件夹内存大小：
 在文件夹中输du -sh可查看文件夹所占内存

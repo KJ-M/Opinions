@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "7f5a6574e0067700",
+        "id": "2e03c7bf00f1c67f",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "C_practice/C_base.md",
-            "mode": "preview"
+            "file": "application/application.md",
+            "mode": "source"
           }
         }
       }
@@ -65,7 +65,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C_practice/C_base.md"
+                "file": "application/application.md"
               }
             }
           },
@@ -75,7 +75,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C_practice/C_base.md"
+                "file": "application/application.md"
               }
             }
           }
@@ -83,18 +83,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 591
+    "width": 591,
+    "collapsed": true
   },
   "lastOpenFiles": [
-    "C_practice/C_base.md",
-    "C.md",
-    "C_practice/C语言内存分配图.png",
-    "运动.md",
-    "Pasted image 20201013213108.png",
-    "Untitled.md",
-    "Ubuntu_problems.md",
-    "images/4.png",
-    "images/3.png",
-    "images/1.png.md"
+    "应用/应用开发.md",
+    "linux_app/app_note.md",
+    "Others/Markdown_test.md",
+    "Others/Ubuntu_problems.md",
+    "图片地址.md",
+    "54_platform_driver_base.md",
+    "网络.md",
+    "Others/use_of_vim.md",
+    "Others/software&website.md.md",
+    "Others/git.md"
   ]
 }
