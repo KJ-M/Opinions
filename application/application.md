@@ -1,4 +1,8 @@
 ## 文件编程
+linux man手册相关
+man1：linux命令:ls,cd ...
+man2:系统调用
+man3：C库函数
 
 两种方法：
 
@@ -10,6 +14,14 @@
 `int creat(const char *filename, mode_t mode)`创建一个文件
 
 open打开一个文件，read，write，
+open函数需注意
+```c
+// if ((to_fd = open(argv[2], O_CREAT, 0777)) == -1)  //使用此方式后续打开文件无法写入
+   if ((to_fd = open(argv[2], O_RDWR|O_CREAT, 0777)) == -1) //使用此方法后续文件可以写入
+   open函数第二个参数为O_CREAT时第三个参数有效，为设置的权限
+   
+   bytes_write = write(to_fd, ptr, bytes_read)	//后续write写入，失败返回-1
+```
 
 lseek移动文件读写指针，读写操作都是从该指针指向的位置开始，且会改变该指针位置
 
@@ -17,7 +29,16 @@ access判断文件是否可读可写等
 
 ### 库函数方式：
 
-fopen，fread，fwrite，fgetc
+fopen:打开文件
+fread，读文件
+fwrite，写n个字段到文件
+fgetc，读一个字符
+fputc，写入一个字符
+fscanf，格式化输出文件的内容 
+fprintf，格式化输入到文件中
+fseek，类似于lseek
+getcwd，获取当前路径
+mkdir，创建一个目录
 
 ## 时间编程
 
@@ -30,9 +51,40 @@ fopen，fread，fwrite，fgetc
 
 time_t time():获取日历时间
 
-gmtime();将日历时间转化为格林威治时间，保存到TM结构体
+gmtime();将日历时间转化为格林威治时间，保存到tm结构体
 
-localtime():将日历时间转化为本地时间，保存到TM结构体
+localtime():将日历时间转化为本地时间，保存到tm结构体
+
+asctime()，将tm结构体内保存的时间值转化为字符串
+
+ctime()，将日历时间转化为本地时间字符串形式
+
+gettimeofday()，计算一天内凌晨到现在的时间差
+
+sleep()，使程序睡眠多少s
+usleep()，使程序睡眠多少us
+```c
+struct tm
+{
+  int tm_sec;			/* Seconds.	[0-60] (1 leap second) */
+  int tm_min;			/* Minutes.	[0-59] */
+  int tm_hour;			/* Hours.	[0-23] */
+  int tm_mday;			/* Day.		[1-31] */
+  int tm_mon;			/* Month.	[0-11] */
+  int tm_year;			/* Year	- 1900.  */
+  int tm_wday;			/* Day of week.	[0-6] */
+  int tm_yday;			/* Days in year.[0-365]	*/
+  int tm_isdst;			/* DST.		[-1/0/1]*/
+
+# ifdef	__USE_MISC
+  long int tm_gmtoff;		/* Seconds east of UTC.  */
+  const char *tm_zone;		/* Timezone abbreviation.  */
+# else
+  long int __tm_gmtoff;		/* Seconds east of UTC.  */
+  const char *__tm_zone;	/* Timezone abbreviation.  */
+# endif
+};
+```
 
 ```c
 #include <stdio.h>
@@ -121,7 +173,8 @@ getpid()	//获取本进程ID
 
 getppid()	//获取父进程ID（进程运行中可创建子进程）
 
-fork()	//创建子进程，返回一个进程号，为子进程
+fork()	//创建子进程
+在父进程中fork返回子进程ID，在新创建的子进程中，fork返回0，创建出错返回负
 
 ```c
 #include <stdio.h>
