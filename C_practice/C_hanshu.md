@@ -98,6 +98,29 @@ void *memset(void *str, int c, size_t n)
 /*复制字符 c（一个无符号字符）到参数 str 所指向的字符串的前 n 个字符
 str -- 指向要填充的内存块。
 c --要被设置的值。该值以int形式传递，但是函数在填充内存块时是使用该值的无符号字符形式。
-n -- 要被设置为该值的字符数。*/
+n -- 要被设置为该值的字符数。*/n表示字节数
+memset可以方便的清空一个结构类型的变量或数组
+struct sample_struct
+{
+char csName[16];
+int iSeq;
+int iType;
+};
+ 
+对于变量：
+struct sample_strcut stTest;
+
+一般情况下，清空stTest的方法：
+
+stTest.csName[0]='/0';
+stTest.iSeq=0;
+stTest.iType=0;
+用memset就非常方便：
+memset(&stTest,0,sizeof(struct sample_struct));
+ 
+如果是数组：
+struct sample_struct TEST[10];
+则
+memset(TEST,0,sizeof(struct sample_struct)*10);
 
   
