@@ -10,8 +10,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "application/application.md",
-            "mode": "source"
+            "file": "C_practice/C_hanshu.md",
+            "mode": "preview"
           }
         }
       }
@@ -48,8 +48,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311,
-    "collapsed": true
+    "width": 311
   },
   "right": {
     "id": "2d69be20ba3ecb1c",
@@ -65,7 +64,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "application/application.md"
+                "file": "C_practice/C_hanshu.md"
               }
             }
           },
@@ -75,7 +74,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "application/application.md"
+                "file": "C_practice/C_hanshu.md"
               }
             }
           }
@@ -87,15 +86,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "application/application.md",
-    "Others/software&website.md.md",
+    "C_practice/C_hanshu.md",
+    "C_practice/C_base_1.md",
+    "rootfs_base.md",
+    "platform.md",
+    "pinctrl,gpio.md",
+    "newchr.md",
     "Others/Ubuntu_problems.md",
-    "exercise/运动.md",
-    "应用/应用开发.md",
-    "linux_app/app_note.md",
-    "Others/Markdown_test.md",
-    "图片地址.md",
-    "54_platform_driver_base.md",
-    "网络.md"
+    "Others/software&website.md.md",
+    "application/application.md",
+    "exercise/运动.md"
   ]
 }
