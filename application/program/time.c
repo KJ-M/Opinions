@@ -3,13 +3,11 @@
 #include <stdio.h>
 int main(void)
 {
+    int cut = 0;
     pid_t pid;
-    pid = fork();
-    if(pid < 0)
-        printf("error in fork!\n");  
-    else if(pid == 0)
-        printf("child process,ID:%d!\n", getpid());  
-    else
-        printf("parent process,ID:%d!child ID is %d\n", getpid(),pid);  
+    pid = vfork();
+    cut++;
+    printf("count = %d\n", cut);
+    _exit(0);
     return 0;
 }

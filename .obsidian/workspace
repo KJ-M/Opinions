@@ -10,8 +10,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "C_practice/C_hanshu.md",
-            "mode": "preview"
+            "file": "application/application.md",
+            "mode": "source"
           }
         }
       }
@@ -48,7 +48,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311
+    "width": 311,
+    "collapsed": true
   },
   "right": {
     "id": "2d69be20ba3ecb1c",
@@ -64,7 +65,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C_practice/C_hanshu.md"
+                "file": "application/application.md"
               }
             }
           },
@@ -74,7 +75,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C_practice/C_hanshu.md"
+                "file": "application/application.md"
               }
             }
           }
@@ -86,6 +87,7 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "application/application.md",
     "C_practice/C_hanshu.md",
     "C_practice/C_base_1.md",
     "rootfs_base.md",
@@ -94,7 +96,6 @@
     "newchr.md",
     "Others/Ubuntu_problems.md",
     "Others/software&website.md.md",
-    "application/application.md",
     "exercise/运动.md"
   ]
 }

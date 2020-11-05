@@ -198,8 +198,26 @@ vfork()	//创建子进程，与fork区别在于：
 
 - vfork子进程和父进程共享数据段
 - vfork：子进程先运行，父进程后运行，而fork父子进程执行顺序不确定
+- 在vfork子进程中调用exrc或exit之后父进程才可能被调度运行，否则可能死锁
 
-exec()//     替换当前进程的代码和数据
+如下：
+```c
+int main(void)
+{
+    int cut = 0;
+    pid_t pid;
+    pid = vfork();
+    cut++;
+    printf("count = %d\n", cut);
+    _exit(0);	//若此处没有exit，则会出现段错误
+    return 0;
+}
+./xx
+count = 1
+count = 2
+```
+
+exec()//     替换当前进程的代码和数据（进程ID不会变，只是改变接下来运行的代码和数据）
 
 wait()	//阻塞该进程，直到其某个子进程退出 
 
