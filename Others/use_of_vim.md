@@ -51,9 +51,7 @@ vimrc文件可以配置vim的设置
 
 使用ctrl+shift++增大窗口字体，ctrl+-减小字体
 
-## vim进阶快捷键：
-
-### 插入模式
+## vim进阶：
 
 - i：在当前字符的左边插入
 - I：在当前行首插入
@@ -64,14 +62,17 @@ vimrc文件可以配置vim的设置
 - c{motion}：删除motion命令跨过的字符，并且进入插入模式。比如：c$，这将会删除从光标位置到行尾的字符并且进入插入模式。ct！，这会删除从光标位置到下一个叹号（但不包括），然后进入插入模式。被删除的字符被存在了剪贴板里面，且可以再粘贴出来。
 - d{motion}：和上面差不多，但是不进入插入模式。
 - c和d都是删除作用，单c删除了会直接进入插入模式
-- s删除选中的并进入插入模式，比c一次删除的多
+- s删除选中的并进入插入模式，但s一次只能删除一个字符
+- caw :change a word可删除光标所在位置并进入插入模式
+- ci" :change inside" 删除"中间的内容
+- ci[ :change inside[ 删除[中间的内容
+- ca[ :change around[删除[中间包括[的内容
+- ya,yi...类似于ci,ca的用法
 
-### 光标移动
+- 使用*,#自动移动到光标所在单词的下一个或上一个
 
-使用*,#自动移动到光标所在单词的下一个或上一个
-
-使用ctrl+n自动补全
-
+- 使用ctrl+n自动补全
+- 使用v可按顺序选择文本，但ctrl+v按块选择文本，结合I，A可快速在多行插入删除内容
 ## ctags使用：
 
 使用ctags -R *生成tags文件
@@ -296,7 +297,7 @@ set autoindent	"按下回车后下一行缩进自动跟上一行保持一致
 set shiftwidth=4	"normal模式下>>增加一级缩进，<<取消一级缩进，==取消全部缩进时，每一级缩进的空格数
 set shiftwidth=4	"自动缩进空白字符个数
 set noexpandtab
-set norelativenumber
+set norelativenumber "取消设置相对行数
 set cursorline
 set wrap
 set showcmd
