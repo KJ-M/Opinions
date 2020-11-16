@@ -31,3 +31,11 @@ Linux下下载AppImage文件，chmod+x，对该文件双击即可运行
 
 ## Git
 [[git]]
+
+## Source Insight
+
+- 可设置外部命令，如按下F12打开git bash等
+在Tools下有Custom Commands，点击add添加，选keys可设置快捷键，输入内容如
+"C:\Program Files (x86)\Vim\vim81\gvim.exe" +%l %f 使用vim打开当前文件（%l %f对应当前行，当前文件
+"D:\git\Git\git-bash.exe"	打开git bash
+"D:\git\Git\cmd\git-gui.exe"	打开git gui

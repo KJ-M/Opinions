@@ -126,7 +126,7 @@ call plug#end()
 
 vim+cscope浏览代码`https://www.bilibili.com/video/BV1q64y1M7sW?from=search&seid=9144590342453117242`
 
-## 可供参考的vim配置：
+## 可供参考的linux下vim配置：
 
 ```c
 "相比于第一个优化了自动生成文件的功能插入代码段的功能，例如插入头文件和自己习惯的一些设置
@@ -356,7 +356,8 @@ map <F6> :vertical resize+1<CR>
 set cscopequickfix=c-,d-,e-,g-,i-,s-,t-
 ```
 
-
+## windows下gvim使用
+https://www.cnblogs.com/chengjian-physique/p/8934640.html
 
 
 

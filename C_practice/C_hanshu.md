@@ -1,4 +1,4 @@
-## memset()用法
+## memset()
 
 每种类型的变量都有各种初始化的方法，memset()函数为“万能方法”，直接操作内存空间：
 
@@ -93,7 +93,7 @@ double pow(double x, double y);
 //函数用来求 x 的 y 次幂（次方），x、y及函数值都是double型 ，其原型为：
 
 ## strstr()
-char *strstr(const char *haystack, const char *needle)
+```char *strstr(const char *haystack, const char *needle)```
 /*haystack -- 要被检索的 C 字符串。
 needle -- 在 haystack 字符串内要搜索的小字符串。
 该函数返回在 haystack 中第一次出现 needle 字符串的位置，如果未找到则返回 null

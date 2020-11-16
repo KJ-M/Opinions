@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "application/application.md",
+            "file": "Others/use_of_vim.md",
             "mode": "source"
           }
         }
@@ -65,7 +65,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "application/application.md"
+                "file": "Others/use_of_vim.md"
               }
             }
           },
@@ -75,7 +75,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "application/application.md"
+                "file": "Others/use_of_vim.md"
               }
             }
           }
@@ -83,19 +83,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 591,
+    "width": 346,
     "collapsed": true
   },
   "lastOpenFiles": [
-    "application/application.md",
+    "Others/use_of_vim.md",
     "C_practice/C_hanshu.md",
+    "application/application.md",
     "C_practice/C_base_1.md",
     "rootfs_base.md",
     "platform.md",
     "pinctrl,gpio.md",
     "newchr.md",
     "Others/Ubuntu_problems.md",
-    "Others/software&website.md.md",
-    "exercise/运动.md"
+    "Others/software&website.md.md"
   ]
 }
