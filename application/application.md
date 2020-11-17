@@ -218,9 +218,44 @@ count = 2
 ```
 
 exec()//     替换当前进程的代码和数据（进程ID不会变，只是改变接下来运行的代码和数据）
+```c
+int main(void)
+{
+    //execlp("ls", "ls", "-al", "/home/mkj", (char *)0);
+	//execl("/bin/ls", "ls", "-al", "/home/mkj", (char *)0);
+	//char *argv[] = {"ls", "-al", "/home/mkj", (char *)0};
+    //execv("/bin/ls", argv);
+	//system("ls -al /home/mkj");
+}
+//相当于直接执行	ls -al /home/mkj
+execlp第一个参数直接从环境变量中取命令
+execl第一个参数是程序所在位置 
+execv相当于execl,只不过把后面的参数保存在一个字符串数组里面
+system此处功能和以上同，不同为此会调用fork创建子进程，然后执行""中的命令，而以上exec函数族不会创建子进程
+```
 
-wait()	//阻塞该进程，直到其某个子进程退出 
 
+wait()	//阻塞该进程，直到其某个子进程退出 ，某种程度相当于vfork
+```c
+int main(void)
+{
+    pid_t pc,pr;
+    pc = fork();
+    if(pc == 0)
+    {
+        printf("This is the child process, pid is %d\n", getpid());
+        sleep(10);
+    }
+    else if(pc > 0)
+    {
+        pr = wait(NULL);
+        printf("folllow child process with pid of %d\n", pr);
+    }
+    exit(0);
+}
+This is the child process, pid is 59421
+folllow child process with pid of 59421
+```
 ### 进程通信
 
 待看

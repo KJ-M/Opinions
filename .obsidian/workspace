@@ -10,8 +10,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "C_practice/C_base_2.md",
-            "mode": "preview"
+            "file": "application/application.md",
+            "mode": "source"
           }
         }
       }
@@ -40,12 +40,11 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "strcmp"
+                "query": ""
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -66,7 +65,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C_practice/C_base_2.md"
+                "file": "application/application.md"
               }
             }
           },
@@ -76,7 +75,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C_practice/C_base_2.md"
+                "file": "application/application.md"
               }
             }
           }
@@ -88,11 +87,11 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "application/application.md",
+    "C_practice/C_base_1.md",
     "C_practice/C_base_2.md",
     "Others/use_of_vim.md",
     "C_practice/C_hanshu.md",
-    "application/application.md",
-    "C_practice/C_base_1.md",
     "rootfs_base.md",
     "platform.md",
     "pinctrl,gpio.md",
