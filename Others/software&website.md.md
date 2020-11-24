@@ -39,3 +39,6 @@ Linux下下载AppImage文件，chmod+x，对该文件双击即可运行
 "C:\Program Files (x86)\Vim\vim81\gvim.exe" +%l %f 使用vim打开当前文件（%l %f对应当前行，当前文件
 "D:\git\Git\git-bash.exe"	打开git bash
 "D:\git\Git\cmd\git-gui.exe"	打开git gui
+
+- 左侧函数大纲预览可通过alt+F8关闭打开
+- 可预先设置好几种不同的窗口布局保存在layoutA，B,C，D中，随时切换布局方便查看

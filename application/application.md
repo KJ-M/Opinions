@@ -15,6 +15,29 @@ man3：C库函数
 
 open打开一个文件，read，write，
 open函数需注意
+函数原型:
+```int open(const char *pathname,int flags,int perms)```
+参数：
+pathname:被打开的文件名（可包括路径名如"dev/ttyS0"）
+flags:文件打开方式,
+O_RDONLY:以只读方式打开文件
+O_WRONLY:以只写方式打开文件
+O_RDWR:以读写方式打开文件
+O_CREAT:如果改文件不存在，就创建一个新的文件，并用第三个参数为其设置权限
+O_EXCL:如果使用O_CREAT时文件存在，则返回错误消息。这一参数可测试文件是否存在。此时open是原子操作，防止多个进程同时创建同一个文件
+O_NOCTTY:使用本参数时，若文件为终端，那么该终端不会成为调用open()的那个进程的控制终端
+O_TRUNC:若文件已经存在，那么会删除文件中的全部原有数据，并且设置文件大小为0
+O_APPEND:以添加方式打开文件，在打开文件的同时，文件指针指向文件的末尾，即将写入的数据添加到文件的末尾
+O_NONBLOCK: 如果pathname指的是一个FIFO、一个块特殊文件或一个字符特殊文件，则此选择项为此文件的本次打开操作和后续的I/O操作设置非阻塞方式。
+O_SYNC:使每次write都等到物理I/O操作完成。
+O_RSYNC:read 等待所有写入同一区域的写操作完成后再进行
+在open()函数中，falgs参数可以通过“|”组合构成，但前3个标准常量（O_RDONLY，O_WRONLY，和O_RDWR）不能互相组合。
+perms:被打开文件的存取权限，可以用两种方法表示，可以用一组宏定义：S_I(R/W/X)(USR/GRP/OTH),其中R/W/X表示读写执行权限，USR/GRP/OTH分别表示文件的所有者/文件所属组/其他用户,如S_IRUUR|S_IWUUR|S_IXUUR,（-rex------）,也可用八进制表示同样的权限0777
+
+返回值：
+成功：返回文件描述符
+失败：返回-1
+
 ```c
 // if ((to_fd = open(argv[2], O_CREAT, 0777)) == -1)  //使用此方式后续打开文件无法写入
    if ((to_fd = open(argv[2], O_RDWR|O_CREAT, 0777)) == -1) //使用此方法后续文件可以写入
@@ -258,8 +281,26 @@ folllow child process with pid of 59421
 ```
 ### 进程通信
 
-待看
-
+#### 目的：
+- 数据传输
+- 资源共享
+- 通知事件
+- 进程控制
+#### 方式
+- 管道（pipe）和有名管道（FIFO）
+	管道：（一般用于父进程和子进程间的通信）
+	```int pipe(int pipefd[2])```
+	pipefd[0],pipe[1]分别对应度和写（助记：读写01）
+	有名管道：（可用于任意两个进程间的通信）
+	```int mkfifo(const char *pathname, mode_t mode);```
+	pathname:fifo文件名
+	mode：文件属性，参考open函数文件属性，注意使用O_NONBLOCK访问无法满足时立刻出
+	错返回，不使用则导致阻塞
+- 信号（signal）
+- 消息队列
+- 共享内存
+- 信号量
+- 套接字（socket）
 ## 线程
 
 ### 线程优点
