@@ -297,6 +297,8 @@ folllow child process with pid of 59421
 	mode：文件属性，参考open函数文件属性，注意使用O_NONBLOCK访问无法满足时立刻出
 	错返回，不使用则导致阻塞
 - 信号（signal）
+发送信号的函数：kill（可以给自己和别人发）和raise（只能给自己发），alarm函数设置时间，产生	SIGALRM信号 ，pause函数挂起进程，直到捕捉到一个信号
+信号处理：使用简单的signal函数，或使用信号函数组
 - 消息队列
 - 共享内存
 - 信号量

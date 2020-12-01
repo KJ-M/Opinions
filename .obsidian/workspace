@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "application/application.md",
+            "file": "Others/software&website.md.md",
             "mode": "source"
           }
         }
@@ -40,7 +40,12 @@
             "state": {
               "type": "search",
               "state": {
-                "query": ""
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
               }
             }
           }
@@ -48,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311,
-    "collapsed": true
+    "width": 311
   },
   "right": {
     "id": "2d69be20ba3ecb1c",
@@ -65,7 +69,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "application/application.md"
+                "file": "Others/software&website.md.md"
               }
             }
           },
@@ -75,7 +79,12 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "application/application.md"
+                "file": "Others/software&website.md.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
               }
             }
           }
@@ -87,15 +96,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Others/software&website.md.md",
+    "Others/Markdown_test.md",
+    "Others/use_of_vim.md",
+    "Others/Ubuntu_problems.md",
     "application/application.md",
     "C_practice/C_base_1.md",
     "C_practice/C_base_2.md",
-    "Others/use_of_vim.md",
     "C_practice/C_hanshu.md",
     "rootfs_base.md",
-    "platform.md",
-    "pinctrl,gpio.md",
-    "newchr.md",
-    "Others/Ubuntu_problems.md"
+    "platform.md"
   ]
 }
