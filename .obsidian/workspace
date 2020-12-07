@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "application/application.md",
+            "file": "Others/software&website.md.md",
             "mode": "source"
           }
         }
@@ -70,7 +70,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "application/application.md"
+                "file": "Others/software&website.md.md"
               }
             }
           },
@@ -97,15 +97,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Others/software&website.md.md",
+    "Others/Markdown_test.md",
+    "Others/use_of_vim.md",
+    "Others/Ubuntu_problems.md",
     "application/application.md",
     "C_practice/C_base_1.md",
     "C_practice/C_base_2.md",
-    "Others/use_of_vim.md",
     "C_practice/C_hanshu.md",
     "rootfs_base.md",
-    "platform.md",
-    "pinctrl,gpio.md",
-    "newchr.md",
-    "Others/Ubuntu_problems.md"
+    "platform.md"
   ]
 }
