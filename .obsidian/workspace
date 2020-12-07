@@ -40,16 +40,21 @@
             "state": {
               "type": "search",
               "state": {
-                "query": ""
+                "query": "ext",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 311,
-    "collapsed": true
+    "width": 311
   },
   "right": {
     "id": "2d69be20ba3ecb1c",
@@ -75,7 +80,12 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "application/application.md"
+                "file": "application/application.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
               }
             }
           }
