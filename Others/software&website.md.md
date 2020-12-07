@@ -34,11 +34,17 @@ Linux下下载AppImage文件，chmod+x，对该文件双击即可运行
 
 ## Source Insight
 
+
 - 可设置外部命令，如按下F12打开git bash等
 在Tools下有Custom Commands，点击add添加，选keys可设置快捷键，输入内容如
 "C:\Program Files (x86)\Vim\vim81\gvim.exe" +%l %f 使用vim打开当前文件（%l %f对应当前行，当前文件
 "D:\git\Git\git-bash.exe"	打开git bash
 "D:\git\Git\cmd\git-gui.exe"	打开git gui
+可使用：ShellExecute Commands，调用ShellExecute函数，用于打开程序，目录，文件等功能
+详情：https://www.sourceinsight.com/doc/v4/userguide/index.html#t=Manual%2FCommand_Reference%2FCustom_Commands1.htm&rhsearch=custom%20commands&rhsyns=%20&rhhlterm=custom%20commands
+个人目前使用：
+ShellExecute open %j	打开工程所在目录（%j，%l也可查阅以上网站）
+ShellExecute open C:\DCRABBIT_9.62	打开目录C:\DCRABBIT_9.62
 
 - 左侧函数大纲预览可通过alt+F8关闭打开
 - 可预先设置好几种不同的窗口布局保存在layoutA，B,C，D中，随时切换布局方便查看
