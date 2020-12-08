@@ -280,15 +280,15 @@ This is the child process, pid is 59421
 folllow child process with pid of 59421
 ```
 ### 进程通信
-
-#### 目的：
+目的：
 - 数据传输
 - 资源共享
 - 通知事件
 - 进程控制
-#### 方式
-- 管道（pipe）和有名管道（FIFO）
-	管道：（一般用于父进程和子进程间的通信）
+方式：
+#### 管道（pipe）和有名管道（FIFO）
+	管道：
+	（一般用于父进程和子进程间的通信）
 	```int pipe(int pipefd[2])```
 	pipefd[0],pipe[1]分别对应度和写（助记：读写01）
 	有名管道：（可用于任意两个进程间的通信）
@@ -296,13 +296,30 @@ folllow child process with pid of 59421
 	pathname:fifo文件名
 	mode：文件属性，参考open函数文件属性，注意使用O_NONBLOCK访问无法满足时立刻出
 	错返回，不使用则导致阻塞
-- 信号（signal）
+	管道里的内容读出后就没有了
+	
+#### 信号（signal）
 发送信号的函数：kill（可以给自己和别人发）和raise（只能给自己发），alarm函数设置时间，产生	SIGALRM信号 ，pause函数挂起进程，直到捕捉到一个信号
 信号处理：使用简单的signal函数，或使用信号函数组
-- 消息队列
-- 共享内存
-- 信号量
-- 套接字（socket）
+####  消息队列
+- 信号传输的信息量有限，管道只能传输无格式的字节流，消息队列则克服了这些缺点
+- 消息队列同管道一样，内容读了就没有了
+- 除非内核重启或者人工删除，否则消息队列不会消失
+- 函数：
+ftok():获取消息队列的健值
+int msgget(key_t key, int msgflg):获取消息队列的描述字
+int msgsnd(int msqid, struct msgbuf *msgp, int msgsz, int msgflg)向消息队列发送一条消息
+int msgrcv(int msqid, struct msgbuf * msgp, int msgsz, long msgtyp, int msgflg)从消息队列中取出一条消息，然后该消息自动删除
+
+
+
+####  共享内存
+ 开辟一段内存，可由进程写入数据，其他进程读出，操作方式类似操作字符串指针，用到函数：
+ - shmget()	创建一段共享内存
+ - shmat()	获取创建的共享内存指针
+ 
+#### 信号量
+####  套接字（socket）
 ## 线程
 
 ### 线程优点
