@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "application/application.md",
+            "file": "Others/Ubuntu_problems.md",
             "mode": "source"
           }
         }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ext",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -71,7 +70,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "application/application.md"
+                "file": "Others/Ubuntu_problems.md"
               }
             }
           },
@@ -81,7 +80,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "application/application.md",
+                "file": "Others/Ubuntu_problems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,11 +97,11 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "application/application.md",
-    "Others/software&website.md.md",
-    "Others/Markdown_test.md",
-    "Others/use_of_vim.md",
     "Others/Ubuntu_problems.md",
+    "Others/Markdown_test.md",
+    "Others/software&website.md.md",
+    "application/application.md",
+    "Others/use_of_vim.md",
     "C_practice/C_base_1.md",
     "C_practice/C_base_2.md",
     "C_practice/C_hanshu.md",

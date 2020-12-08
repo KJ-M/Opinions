@@ -49,3 +49,72 @@ q退出，P按照CPU资源大小排序，M按照内存大小排序
 
 ## Ubuntu下安装flathub下的软件
 Ubuntu20.04已经安装好flatpak，若需要用到flathub下的软件可以查一下怎么安装，具体有些特定的软件可能需要在flathub下才能安装，也可能flathub下有更丰富的linux软件
+
+## Ubuntu下查看正在运行的软件
+ps -aux
+
+## Ubuntu下无挂起后台运行软件命令
+nohup command >>a.txt &还不太清楚，不过貌似很有用的样子，以后用到了再深究
+
+## linux输入输出重定向
+
+默认都是从键盘输入，屏幕输出
+可能见过2>/dev/null之类的语句，是把输出输出到“黑洞”，目的忽视输出
+
+### linux标准输入输出
+执行shell命令时会默认打开以下三个文件
+标准输入0	从键盘获得输入 /proc/self/fd/0
+标准输出1	输出到屏幕（控制台）	/proc/self/fd/1
+错误输出2	输出到屏幕（控制台）	/proc/self/fd/2
+
+/dev/null 代表空设备文件，往这个里面写入都会丢失
+
+可以修改文件描述符的指向实现输入输出的重定向
+
+### 输出重定向>
+- command >filename	:把标准输出重定向到新文件中(没有则创建，有则删除重新创建)
+- command 1>filename :同上（>前不输入默认指1）
+- command >>filename :把标准输出追加到文件中
+- command 1>>filename :同上
+- command 2>filename :把标准错误重定向到新文件
+- command 2>>filename :把标准错误追加到新文件中
+
+### 输入重定向<
+- command <filename :以filename文件作为标准输入
+- command 0<filename :同上
+- command <<delimiter :从标准输入中读入，遇到delimiter分割符
+(注意：命令后面的参数可能不算输入，cat函数后面不跟文件的话默认输出键盘输入的内容，这个算是输入，见下面例子)
+
+### 输入输出重定向示例
+```shell
+$ls a.txt b.txt 2>err
+a.txt
+$cat err
+ls: 无法访问b.txt: 没有那个文件或目录
+ $ls a.txt b.txt >out 2>err
+ $cat out
+a.txt
+$cat err
+ls: 无法访问b.txt: 没有那个文件或目录
+
+$ cat input
+aaa
+111
+$ cat >out <input
+$ cat out
+aaa
+111
+
+注意以下操作：
+$ls >/dev/null 2>&1
+$ls 2>&1 >dev/null
+2>&1代表将错误输出输出到标准输出处
+以上两行2>&1位置不同，输出结果也不同，前者标准，错误输出都会输出到/dev/null
+后者错误输出输出到屏幕，标准输出输出到/dev/null，即“黑洞”
+```
+		
+## linux管道 |
+管道|前后都是命令，后一个命令的输入是前一个命令的输出
+
+## linux xargs命令
+xargs常与管道|结合使用，因为：管道：后一个命令的输入是前一个命令的输出，但是，好多命令，如ls，mkdir等，都不会从标准输入读取内容，而是从参数读取内容，xargs可以把标准输入转化为后一个命令的参数，这样就可以更顺畅使用管道
