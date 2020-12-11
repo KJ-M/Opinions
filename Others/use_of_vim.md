@@ -132,7 +132,7 @@ vim+cscope浏览代码`https://www.bilibili.com/video/BV1q64y1M7sW?from=search&s
 ```c
 "相比于第一个优化了自动生成文件的功能插入代码段的功能，例如插入头文件和自己习惯的一些设置
 
-
+set relativenumber	"显示相对行号
 "允许插件  
 filetype plugin on
 " 设置行号
