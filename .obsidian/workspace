@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Others/Ubuntu_problems.md",
+            "file": "application/application.md",
             "mode": "source"
           }
         }
@@ -70,7 +70,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Ubuntu_problems.md"
+                "file": "application/application.md"
               }
             }
           },
@@ -80,7 +80,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Ubuntu_problems.md",
+                "file": "application/application.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,15 +97,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "application/application.md",
     "Others/Ubuntu_problems.md",
+    "exercise/运动.md",
     "Others/Markdown_test.md",
     "Others/software&website.md.md",
-    "application/application.md",
     "Others/use_of_vim.md",
     "C_practice/C_base_1.md",
     "C_practice/C_base_2.md",
     "C_practice/C_hanshu.md",
-    "rootfs_base.md",
-    "platform.md"
+    "rootfs_base.md"
   ]
 }

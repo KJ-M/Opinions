@@ -319,6 +319,10 @@ int msgrcv(int msqid, struct msgbuf * msgp, int msgsz, long msgtyp, int msgflg)�
  - shmat()	获取创建的共享内存指针
  
 #### 信号量
+主要用途是保护临界资源，进程根据他判断是否可以访问某些共享资源，除了访问控制外还可用于进程同步
+- 二值信号灯：只能取0或1，类似于互斥锁
+- 计数信号灯：信号灯值可以取任意非负值
+
 ####  套接字（socket）
 ## 线程
 
