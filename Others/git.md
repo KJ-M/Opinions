@@ -90,6 +90,10 @@ git branch -d [name] (删除一个已经合并了的分支，如果强制删除�
 
 ###  远程库基本操作
 
+git fetch	//拉取远程所有分支
+git branch -r	//查看所有拉取的远程分支
+git checkout xxx	//切换到xxx分支 
+
 Git remote add mygithub http://xxxxxx	将远程库链接设置为mygithub，方便调用
 
 Git remote -v	显示已经设置好的远程库链接，也可在config中查看，跟name一起

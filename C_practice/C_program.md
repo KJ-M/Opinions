@@ -31,6 +31,83 @@ int main(void)
     fclose(fp);
     return 0;
 }
-
 ```
+## 排序算法
+```
+int cacl(int *n, int num)	//冒泡排序
+			{
+				int i,j;
+				for(i = 0; i < num-1; ++i)
+				{
+					for(j = 0;j < num-1; ++j)
+					{
+						if (n[j]<n[j+1])
+							{
+							n[j] = n[j] ^ n[j+1];
+							n[j+1] = n[j] ^ n[j+1];
+							n[j] = n[j]^n[j+1];
+							}
+					}
+				}
+				return 0;
+			}
+int cal(int *n, int num)	//选择排序
 
+		{
+			int i,j;
+			for (i = 0; i < num -1; ++i)
+				{
+				for (j = i+1; j < num; ++j)
+					{
+					if (n[i]>n[j])
+						{
+						n[i] = n[i] ^ n[j];
+						n[j] = n[i] ^ n[j];
+						n[i] = n[i] ^ n[j];
+						}
+					}
+				}
+			return 0;
+		}
+```
+## 交换量数值最简单可靠方法
+```
+^:异或，相同为1
+a = a^b;
+b = a^b;
+a = a^b;
+```
+## 二分法查找
+```
+int find(int *arry, int nu, int find_nu)
+{
+	int start,end,mid;
+	start = 0;
+	end = nu;
+	mid = (start+end)/2;
+	while((start < end)&&(arry[mid] != find_nu))
+	{
+		if(arry[mid] > find_nu)
+		{
+			start = mid + 1;
+			mid = (start+end)/2;
+		}
+		else
+		{
+			end = mid -1;
+			mid = (start + end)/2;
+		}
+	}
+	if(arry[mid] != find_nu)
+	{
+		printf("no match!\n");
+		return 0;
+	}
+	else
+	{
+		printf("find OK, num is:%d\n", mid);
+		return mid;
+	}
+		
+}	
+```	
