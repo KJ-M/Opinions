@@ -493,3 +493,7 @@ com_f[1] = (float)getModbusRtuLongInverse(0,8,com_rbuf);
                 com_f[1] += atof(a);
 借助字符串和atof函数将两个整数拼成一个带小数的整数
 [[常用函数#atof()|link]]
+
+## sizeof(int)
+
+sizeof()返回字节数sizeof（int）!= 1
