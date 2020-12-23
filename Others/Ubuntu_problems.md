@@ -39,10 +39,15 @@ tar -vxjf uboot-imx-2016.03-2.1.0-g8b546e4.tar.bz2
 Ubuntu往U盘考文件不显示进度，系统会每隔一段时间同步缓冲区的文件，所以，以防万一，需要在命令行输入sync完成同步
 Sync：即synchronize 使同步
 
-## 全局搜索命令：
+## 搜索命令find，grep：
 使用命令grep -nR "87800000"可以在uboot目录下递归搜索含有87800000的文件
+grep "xxxx" -nr ./dir/*.c
+grep "xxxx" -nr ./dir
+-n:显示行数；-r递归查找目录
 可使用“find -name 文件名 ”命令搜索目录下的文件
-
+find -name "xxx"	//本目录下自动递归查找，不用指定-r
+find /etc -name "xxx"	//在/etc目录下递归查找
+locate根据事先准备好的数据库查，比较快，但须要更新数据库
 ## Ubuntu下查看正在运行的软件cpu内存：
 top命令
 q退出，P按照CPU资源大小排序，M按照内存大小排序
