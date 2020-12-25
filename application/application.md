@@ -333,3 +333,17 @@ int msgrcv(int msqid, struct msgbuf * msgp, int msgsz, long msgtyp, int msgflg)�
 ### linux下多线程特点
 
 Linux下多线程遵循POSIX线程接口，成为pthread，编写Linux下多线程程序，需使用头文件pthread.h，连接时需要使用库libpthread.a
+- 创建线程：
+```c
+#include <pthread.h
+int pthread_create(pthread_t *tidp, const pthread_addr_t * addr, void*(*start_rtn)(void),void *arg)
+
+tidp: 线程ID
+attr：线程属性，通常为空
+start_rtn：线程要执行的函数
+arg：函数start_rtn的参数
+```
+- 多线程编译
+因为pthread不是linux系统的库，故需要在编译的时候加上 -lpthread
+`#gcc filename -lpthread`
+注意：-lpthread不能加在前面，放后面才不会报错
