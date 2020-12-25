@@ -130,7 +130,7 @@ git pull mygithub master 此命令相当于前面的先fetch再merge，一步达
 [credential]
         helper = store --file ~/.git-credentials
 ```
-其中~/.git-credentials跟.gitconfig保存在同一目录，用于保存用户名密码，输入一次后以后即可自动输入
+其中~/.git-credentials跟.gitconfig保存在同一目录，用于保存用户名密码，输入一次后以后即可自动输入。
 ## git stash使用
 
 （1）**git stash** save "save message" : 执行存储时，添加备注，方便查找，只有git stash 也要可以的，但查找时不方便识别。
