@@ -51,3 +51,5 @@ ShellExecute open C:\DCRABBIT_9.62	打开目录C:\DCRABBIT_9.62
 
 ## Vscode 
 - 使用vscode插件Remote-SSH（open a forder on a remote........）连接远程服务器即可相当于在该服务器上进行开发，文件可以右键点击下载即可下载到本地
+- 主题Slack Theme
+- 
