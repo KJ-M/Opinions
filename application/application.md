@@ -342,8 +342,25 @@ tidp: 线程ID
 attr：线程属性，通常为空
 start_rtn：线程要执行的函数
 arg：函数start_rtn的参数
+
+返回值：0为创建正常，非零则为错误类型
 ```
 - 多线程编译
 因为pthread不是linux系统的库，故需要在编译的时候加上 -lpthread
 `#gcc filename -lpthread`
 注意：-lpthread不能加在前面，放后面才不会报错
+
+- 终止线程
+进程中的==任意一个线程==调用exit或_exit，那么整个==进程==都会终止
+线程本身正常退出的方式有：
+1. 线程从启动历程中返回（return）
+2. 线程可以被另外一个进程终止（kill）
+3. 线程自己调用phtread_exit函数
+ `pthread_exit(void *rval_ptr)`
+终止调用线程，rval_ptr：线程退出返回值得指针
+
+- 线程等待
+`int pthread_join(pthread_t tid, void **rval_ptr`
+功能：阻塞调用线程，直到指定的线程终止
+Tid：等待退出的线程id
+Rval_ptr:线程退出的返回值的指针
