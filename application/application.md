@@ -345,6 +345,7 @@ arg：函数start_rtn的参数
 
 返回值：0为创建正常，非零则为错误类型
 ```
+主函数创建线程之后会继续运行后面的代码，遇见sleep()才会进入线程运行，遇见sleep之前进程退出（return）则线程不运行即随之退出
 - 多线程编译
 因为pthread不是linux系统的库，故需要在编译的时候加上 -lpthread
 `#gcc filename -lpthread`
@@ -357,10 +358,27 @@ arg：函数start_rtn的参数
 2. 线程可以被另外一个进程终止（kill）
 3. 线程自己调用phtread_exit函数
  `pthread_exit(void *rval_ptr)`
-终止调用线程，rval_ptr：线程退出返回值得指针
+终止调用线程，rval_ptr：线程退出返回值得指针（暂时未做实验）
 
 - 线程等待
 `int pthread_join(pthread_t tid, void **rval_ptr`
 功能：阻塞调用线程，直到指定的线程终止
 Tid：等待退出的线程id
 Rval_ptr:线程退出的返回值的指针
+
+- 线程标识
+`pthread_t pthread_self(void)`返回线程id
+
+- 清除
+线程异常退出导致某些资源未释放会造成问题，比如溢出，需要清除
+`void pthread_cleanup_push(void (*rtn)(void *), void *arg)`
+功能：将清除函数压入清除栈
+rtn：清除函数
+arg：清除函数的参数
+
+`void pthread_cleanup_pop(int execute)`
+功能：将清除函数弹出清除栈
+execute:执行到pthread_cleanuup_pop()时是否在弹出清理函数的同时执行该函数
+execute:为0直接弹出，不执行，为非0则执行完再弹出
+
+清除函数会在异常退出时执行，此异常退出包括：调用pthread_exit()，异常终止；但不包括return（return为正常退出）
