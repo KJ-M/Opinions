@@ -365,6 +365,7 @@ arg：函数start_rtn的参数
 功能：阻塞调用线程，直到指定的线程终止
 Tid：等待退出的线程id
 Rval_ptr:线程退出的返回值的指针
+使用phtread_join时，多个线程执行顺序不一定，看操作系统
 
 - 线程标识
 `pthread_t pthread_self(void)`返回线程id
@@ -382,3 +383,6 @@ execute:执行到pthread_cleanuup_pop()时是否在弹出清理函数的同时�
 execute:为0直接弹出，不执行，为非0则执行完再弹出
 
 清除函数会在异常退出时执行，此异常退出包括：调用pthread_exit()，异常终止；但不包括return（return为正常退出）
+
+## 网络编程
+![[Pasted image 20201229130909.png]]
