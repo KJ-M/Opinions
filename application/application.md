@@ -386,3 +386,42 @@ execute:为0直接弹出，不执行，为非0则执行完再弹出
 
 ## 网络编程
 ![[Pasted image 20201229130909.png]]
+### 网络地址
+struct sockaddr_in{}{}结构体记录网络地址
+int inet_aton()将a.b.c.d形式的IP转换为32位的整数IP
+char *inet_ntoa()将整数IP转换为字符串a.b.c.d
+
+### 网络采用big endian
+原因：不同设备使用不同的字节序，网络统一使用big endian可完成不同设备之间的通信
+ntons()将unsigned short类型从主机序转换到网络序
+htonl()把unsigned long类型从主机序转换到网络序
+ntohs()把unsigned short从网络序转换到主机序
+ntohl()...
+
+### socket编程常用函数
+```c
+socket()---创建一个socket
+bind()------绑定IP地址和端口号到socket
+connect()-------与服务器建立连接
+listen()--------设置服务器能处理最大连接要求
+accept()--------等待客户端的socket连接请求
+send()----------发送数据
+recv()-----------接收数据
+```
+
+### 基于TCP-服务器编程思路
+1. 创建一个socket，函数socket()
+2. 绑定IP地址，端口等信息到socket，函数bind()
+3. 设置允许最大连接数，函数listen()
+4. 等待用户连接，函数accept()
+5. 收发数据，函数send(),recv(),或者read(),write()
+6. 关闭网络连接
+
+### 基于TCP-客户端编程思路
+1. 创建一个socket，函数socket()
+2. 设置要连接的服务器IP和端口等属性
+3. 连接服务器，函数connect()
+4. 收发数据，函数send(),recv()或read(),write()
+5. 关闭网络连接
+
+
