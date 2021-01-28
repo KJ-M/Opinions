@@ -497,3 +497,28 @@ com_f[1] = (float)getModbusRtuLongInverse(0,8,com_rbuf);
 ## sizeof(int)
 
 sizeof()返回字节数sizeof（int）!= 1
+
+## 算法时间复杂度O(n)
+
+我的理解：当执行次数n大到一定程度时，把这段代码执行的”最大“次数公式用一个简易的公式表示
+
+执行最大次数,T(n),简易公式O(n),n代表次数，一般把n趋于无穷大
+如：
+```c
+for(i = 0; i < n; ++i)
+{
+	printf("xxx");
+	printf("xxddfds");
+}
+//T(n) = 2*n;当n趋于无穷大，2对T(n)影响已经不大，故可用O(n)代表
+for(j = 0;j<n;++j)
+{
+	for(i = j; i < n; ++i)
+	{
+		printf("xxx");
+		printf("xxddfds");
+	}
+}
+//T(n) = 2*n*n，当n无穷大，2可忽略，故O(n^2)可表示，
+//同理，若有更高次幂，则n^2可忽略，用O(n更高次幂)表示
+```
