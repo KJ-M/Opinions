@@ -56,3 +56,23 @@ ShellExecute open C:\DCRABBIT_9.62	打开目录C:\DCRABBIT_9.62
 
 ## Windows下看图
 JPEGView
+
+## gcc,gdb调试
+### 产生调试信息:
+gcc -g
+
+### 断点：
+b+行数/函数名，
+b xxx if i==n:当i=n时在xxx处断点
+info b，
+del/del n
+watch b：调试过程中，如某函数有一局部变量b，当执行过程中b被改变就断掉
+### 执行：
+run/r开始，s/step单步，n/next一次一个函数，c/continue继续到结束或下个断点
+### 查看：
+p/print+变量/{变量1,2...}：断点处查看一次该变量，
+display+变量/{变量1,2...}每次断点处都查看，undisplay解除查看，
+bt full：查看栈帧+所有局部变量
+info display/b/watch：查看输入的调试信息
+### 调试过程改变变量值：
+set variable a=n:把a现有的值换成n
