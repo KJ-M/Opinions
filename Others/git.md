@@ -126,7 +126,7 @@ Git merge mygithub/master 将抓取到的mygithub/master合并到本地库master
 git pull mygithub master 此命令相当于前面的先fetch再merge，一步达成同步
 
 ## windows下设置免输入用户名密码
-在.gitconfig中输入如下代码
+在用户目录下.gitconfig中输入如下代码
 ```shell
 [credential]
         helper = store --file ~/.git-credentials

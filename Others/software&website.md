@@ -56,6 +56,8 @@ ShellExecute open C:\DCRABBIT_9.62	打开目录C:\DCRABBIT_9.62
 
 ## Windows下看图
 JPEGView
+- 默认打开是全屏，在编辑使用者设定里面找到showfullscreen相关选项设置成false即可
+- 默认开启巡逻面板，可关闭后，设置目前设定为预设值，即可保存
 
 ## gcc,gdb调试
 ### 产生调试信息:
@@ -63,7 +65,7 @@ gcc -g
 
 ### 断点：
 b+行数/函数名，
-b xxx if i==n:当i=n时在xxx处断点
+b xxx if i== n : 当i=n时在xxx处断点
 info b，
 del/del n
 watch b：调试过程中，如某函数有一局部变量b，当执行过程中b被改变就断掉
@@ -84,3 +86,7 @@ p/display 后加
 /c	以字符形式打印变量或表达式的值。
 ### 调试过程改变变量值：
 set variable a=n:把a现有的值换成n
+
+
+## Snipaste
+截图加贴图工具（超级好用，可惜有些电脑安装麻烦）

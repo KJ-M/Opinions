@@ -484,25 +484,8 @@ char strhexTohex(char c)			//单个字符串转16进制
 - <<,>>操作，数值取代覆盖的值，左移右移时是否补0问题：
 	左移时总是移位和补零。右移时无符号数是移位和补零，此时称为逻辑右移;而有符号数大多数情况下是移位和补最左边的位（也就是补最高有效位），移几位就补几位,此时称为算术右移
 	故：在国标212协议crc计算函数中，使用无符号整型：
-```c
-	unsigned int CRC16_Checkout ( unsigned char *puchMsg, unsigned int usDataLen ) 
-{ 
-	unsigned int i,j,crc_reg,check; 
-	crc_reg = 0xFFFF; 
-	for(i=0;i<usDataLen;i++) 
-	{ 
-		crc_reg = (crc_reg>>8) ^ puchMsg[i]; 
-		for(j=0;j<8;j++) 
-		{ 
-		check = crc_reg & 0x0001; 
-		crc_reg >>= 1; 
-		if(check==0x0001) 
-			{ 
-				crc_reg ^= 0xA001; 
-			} 
-		} 
-	}
-```
+	[[C_program#国标212CRC计算]]
+
 - 此处已知hex的每一位，0x0n,0x0m,想得到0xmn可以用<<,也可以计算，如下：
 f1.ch[0] = p1[0] * 16 + p1[1];
 
@@ -513,7 +496,7 @@ com_f[1] = (float)getModbusRtuLongInverse(0,8,com_rbuf);
                 sprintf(a, "0.%d", nu);
                 com_f[1] += atof(a);
 借助字符串和atof函数将两个整数拼成一个带小数的整数
-[[常用函数#atof()|link]]
+[[C_hanshu#atof]]
 
 ## sizeof(int)
 
