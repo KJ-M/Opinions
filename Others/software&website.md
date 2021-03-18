@@ -72,6 +72,7 @@ run/r开始，s/step单步，n/next一次一个函数，c/continue继续到结�
 ### 查看：
 p/print+变量/{变量1,2...}：断点处查看一次该变量，
 display+变量/{变量1,2...}每次断点处都查看，undisplay解除查看，
+p/display 后加/x，以16进制显示变量
 bt full：查看栈帧+所有局部变量
 info display/b/watch：查看输入的调试信息
 ### 调试过程改变变量值：
