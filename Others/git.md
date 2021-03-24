@@ -200,3 +200,8 @@ git rev-list --all | xargs git grep "BOCON_V50_190520_QH" 找到def1d7761cee4bdc
 2. 切换到无历史分支，删除原分支
 3. 重命名无历史分支名为原分支名
 4. 强制推送到远程 git push origin xxx -f
+
+## git 在windows和linux下回车换行问题
+- windows下默认是CRLF,linux下默认LF
+- git使用core.autocrlf = true/false/input解决此问题
+- window下把core.autocrlf=true可使文件LF进来时转为CFLF,走时自动转为LF（设置false不做转换，可能出现文档所有内容只显示一行问题）；linux下把core.autocrlf=input，可使文件自动吧CRLF转为LF
