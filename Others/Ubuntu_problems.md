@@ -132,3 +132,7 @@ xargs常与管道|结合使用，因为：管道：后一个命令的输入是�
 ls -al命令显示内容：
 -rwxr-xr--
 后九位三位一组，表示用户，用户所在组，其他用户的权限rwx读写执行
+
+## nfs下载出错(版本兼容问题)
+ubuntu配置nfs服务器，通过uboot的nfs下载命令会出错，无法下载，原因是uboot中使用的nfs版本为v2，ubuntu中nfs版本为v3，v4以上，导致uboot无法在nfs服务器上找到文件，解决办法：让ubuntu中的nfs兼容v2，修改/etc/default/nfs-kernel-server文件如下：
+在/etc/default/nfs-kernel-server添加RPCNFSDOPTS="--nfs-version 2,3,4 --debug --syslog"，重启NFS即可
